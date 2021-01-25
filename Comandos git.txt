@@ -1,0 +1,99 @@
+Abri este tópico para compartilhar com vocês alguns dos comandos que costumo utilizar com mais frequência no processo de desenvolvimento.
+
+
+
+Inicializar um repositório:
+
+git init
+
+
+Identificação no repositório Git:
+
+git config --global user.name "Daniel"
+git config --global user.email "danielsantos_ads@hotmail.com"
+
+
+Salvar versão do projeto:
+
+git status ( Visualizar o status do projeto)
+git add . (Adicionar todos os arquivos para área de staged 'Pronto para commit', a etapa anterior é chamada de untracked)
+git commit -m "Informa o nome do commit"
+
+
+Visualizar commit realizados:
+
+git log (Visualizar os commit realizados)
+git log --oneline (Visualizar os commits realizados em versão reduzida)
+
+
+Voltar ao commit atual: 
+
+git clean -df (Limpa as atualizações realizadas)
+git checkout -- . (Nesta situação restaura a versão)
+
+
+Desfazer o commit 
+
+git reset --soft HEAD~1 (Desfaz o ultimo commit, mas matem as alterações atuais e fica disponível para commit na área de staged)
+git reset --hard HEAD~1 (Desfaz o ultimo commit e as alterações do ultimo commit).
+
+
+Visualizar as alterações realizadas em um determinado commit
+
+git chekout <codigo do commit> (Deixa o commit selecionado como sendo o atual)
+git chekout <nome do branch> (Deixa o ultimo commit realizado no branch como sendo o atual)
+
+
+Criar um branch 
+
+git checkout -b "develop" (Cria um branch com o nome develop)
+
+
+Selecionar um branch 
+
+git checkout "nome do branch" (Semelhante a chamada no visualizar as alterações realizadas em um determinado commit)
+
+
+Associar repósitorio atual com o repositório no GitHub
+
+git remote add origin <Endereço do repositório online> (Vincula o repositório atual com o do Git Hub)
+
+
+Alterar associação do repositório local com o repositório online
+
+git remote set-url origin <Endereço do novo repositório online>(Altera o vinculo do repositório local com o repositório online)  
+
+
+Transferir o repositório local para o repositório online
+
+git push -u origin master (transfere o repositório local para o repositório online para o branch Master)
+
+
+Transferir as alterações 
+
+git push (transfere as alterações realizadas para o branch em sessão)
+
+
+Transferir repositório remoto para o repositório local
+
+git clone <Uri do projeto> (transfere o repositório remoto para o repositório local com o histórico de commits)
+
+
+Atualizar o repositório local através do repositório remoto
+
+git pull origin master (Atualiza os commits disponíveis no repositório remoto para o repositório local )
+
+
+Alerar mensagens do commit
+
+git commit --amend (Pega o ultimo commit que foi realizado e joga na tela de edição. Após alterar o nome é preciso clicar no ESC e digitar : WQ)   
+
+
+Criar backup temporário de arquivos pendentes de commit
+
+git stash (Cria um branch temporário com as alterações)
+
+
+Restaurar as alterações contidas no backup temporário
+
+git stash apply (Se houver mais de um backup, liste por meio do "git stash list" e aplique por meio do índice a ser recuperado, ex: git stash apply @{id}).
